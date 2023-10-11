@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FilterPanelComponent } from './filter-panel/filter-panel.component';
 import { FilterComponent } from './filter/filter.component';
-import { MultiSelectFilterComponent } from './multi-select-filter/multi-select-filter.component';
 import { SingleSelectFilterComponent } from './single-select-filter/single-select-filter.component';
 import { LinktaggerModule } from './lib/linktagger/linktagger.module';
 import { DropdownModule } from 'primeng/dropdown';
@@ -15,7 +14,6 @@ import { BrowserModule } from '@angular/platform-browser';
   declarations: [
     FilterPanelComponent,
     FilterComponent,
-    MultiSelectFilterComponent,
     SingleSelectFilterComponent
   ],
   imports: [
@@ -30,13 +28,11 @@ import { BrowserModule } from '@angular/platform-browser';
   bootstrap:[
     FilterPanelComponent,
     FilterComponent,
-    MultiSelectFilterComponent,
     SingleSelectFilterComponent
   ],
   exports: [
     FilterPanelComponent,
     FilterComponent,
-    MultiSelectFilterComponent,
     SingleSelectFilterComponent
   ],
 })

@@ -1,7 +1,4 @@
 <label class="ib-label" [class.ib-disabled]="options.disabled">{{options.name}}</label>
 
-<!-- <app-multi-select-filter *ngIf="options.multi" [options]="options"
-  (panelShow)="getValues()" (panelHide)="onMultiSelectSubmit($event)" (change)="onMultiSelectChange($event)"></app-multi-select-filter> -->
-
 <app-single-select-filter *ngIf="!options.multi" [options]="options"
   (show)="getValues()" (select)="onSelectChange($event)" [resetOnSubmit]="resetOnSubmit" [resetFilter]="resetFilter"></app-single-select-filter>

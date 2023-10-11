@@ -1,7 +1,12 @@
 <div>
   <h4>Filters</h4>
 </div>
-<div *ngFor="let filter of (filters)">
-  <app-filter *ngIf="filter.option" [options]="filter.option" (submit)="onSubmit($event)"
-    [resetOnSubmit]="true"></app-filter>
+<div class="row ib-padding-20">
+  <div class="ib-filters-all">
+    <div class="multi-collapse" id="ib-filters">
+      <div *ngFor="let filter of (filters)">
+          <app-filter *ngIf="filter.option" [options]="filter.option" (submit)="onSubmit($event)" [resetOnSubmit]="false"></app-filter>
+        </div>
+    </div>
+  </div>
 </div>

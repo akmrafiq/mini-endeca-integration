@@ -55,6 +55,7 @@ export class FilterPanelComponent implements OnInit, OnDestroy {
   /** @internal */
   onSubmit(event: number[]) {
     this.endecapodService.AddMultiple(event);
+    this.endecapodService.DoSearch();
     this.stateService.save(StateService.STATE_KEY_COLLECTION_HOME, 'false');
 }
 
@@ -83,7 +84,6 @@ export class FilterPanelComponent implements OnInit, OnDestroy {
      */
     filters
       .map((f: Filter) => {
-        debugger
         if ((f.type === FilterType.MSELECT) || (f.type === FilterType.SSELECT)) {
           f.option = <Option>res.getDimensions().find((d: Dimension) => d.id === f.N)
             || <Option>{ id: f.N, name: '', multi: f.type === FilterType.MSELECT, disabled: true };
@@ -126,7 +126,6 @@ export class FilterPanelComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    debugger
     this.valueSvc = new DimensionFilterValueService(this.filterExposeService, this.endecapodService);
     /**
      * Subscribe to behavior-result here becasue we are late
@@ -135,7 +134,6 @@ export class FilterPanelComponent implements OnInit, OnDestroy {
       res => {
         console.log(res)
         if (res instanceof SearchResult) {
-          debugger
           this.rangeFilter = res.getNavigationRangeFilter();
           [this.filters, this.more_filters] = this.loadFilters(res);
         }
