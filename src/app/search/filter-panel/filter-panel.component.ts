@@ -5,12 +5,10 @@ import { AppConfigData } from '../model/config/app-config-data';
 import { Subscription } from 'rxjs';
 import { FilterValuesService } from '../service/filter-values.service';
 import { AppConfigService } from '../service/app-config.service';
-import { MessageService } from 'primeng/api';
 import { StateService } from '../service/state.service';
 import { CollectionService } from '../service/collection.service';
 import { Option } from '../model/option';
 import { DimensionFilterValueService } from '../service/dimension-filter-value.service';
-import { MessageSettings } from '../model/message-settings';
 
 @Injectable()
 export class FilterExposeService extends EndecapodService { }
@@ -25,7 +23,6 @@ export class FilterExposeService extends EndecapodService { }
 })
 
 export class FilterPanelComponent implements OnInit, OnDestroy {
-
   private appConfigData: AppConfigData;
   /** @internal */
   filters: Filter[];
@@ -86,7 +83,7 @@ export class FilterPanelComponent implements OnInit, OnDestroy {
      */
     filters
       .map((f: Filter) => {
-
+        debugger
         if ((f.type === FilterType.MSELECT) || (f.type === FilterType.SSELECT)) {
           f.option = <Option>res.getDimensions().find((d: Dimension) => d.id === f.N)
             || <Option>{ id: f.N, name: '', multi: f.type === FilterType.MSELECT, disabled: true };
@@ -129,15 +126,16 @@ export class FilterPanelComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-
+    debugger
     this.valueSvc = new DimensionFilterValueService(this.filterExposeService, this.endecapodService);
     /**
      * Subscribe to behavior-result here becasue we are late
      */
     this.subscription = this.endecapodService.BehaviorResult().subscribe(
       res => {
-
+        console.log(res)
         if (res instanceof SearchResult) {
+          debugger
           this.rangeFilter = res.getNavigationRangeFilter();
           [this.filters, this.more_filters] = this.loadFilters(res);
         }

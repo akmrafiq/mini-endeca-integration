@@ -1,1 +1,63 @@
-/* You can add global styles to this file, and also import other style files */
+.ib-filters-wrapper .ib-collapse-panel {
+  height: 1.75rem;
+  width: 100%;
+  display: block;
+  line-height: 1.75rem;
+  padding: 0 0 0 .5rem;
+  color: #000;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: 400;
+  border-bottom: 1px solid #DDDDDD;
+  margin-bottom: 1px;
+  pointer-events: none;
+}
+
+.ib-collapse-panel svg {
+  font-size: 1.2rem;
+  position: relative;
+  top: 0px;
+  margin-right: .3rem;
+  /* color: #B30838; */
+}
+
+.ib-offcanvas-navigation-grid-comparison .offcanvas-nav .ib-collapse-panel {
+  display: block;
+  margin: 0 0 .5rem 0;
+  padding: 0 0 .5rem;
+}
+
+.ib-offcanvas-navigation-grid-comparison .offcanvas-nav .ib-collapse-panel .fa-angle-down {
+  float: right;
+  margin-right: 1rem;
+  margin-top: .5rem;
+}
+
+.ib-offcanvas-navigation-grid-comparison .offcanvas-nav .ib-collapse-panel .fa-angle-down::before {
+  content: "\f106";
+}
+
+.ib-filters-all {
+  margin-top: -1px;
+}
+
+.ib-offcanvas-navigation-grid-comparison .ib-filters-all {
+  min-height: 70vh;
+}
+
+.ib-filters-sticky-mobile {
+  position: fixed;
+  top: 45px;
+  display: block;
+  padding: 0 1rem 1rem;
+  overflow-y: scroll;
+  height: calc(100vh - 50px);
+  width: 100%;
+}
+
+.ib-fixed .ib-filters-sticky-mobile .ib-filters-sticky,
+.ib-fixed .p-sidebar-left .ib-navigation-sticky {
+  position: relative;
+  top: 0;
+  margin-top: 0px;
+}

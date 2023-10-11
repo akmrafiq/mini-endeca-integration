@@ -1,0 +1,4 @@
+<p-multiSelect #multiSelect id="dim-{{options.id}}" [disabled]="options.disabled" [options]="options.values" [(ngModel)]="options.selectedValues"
+  optionLabel="name" defaultLabel="Select one or more options" filterPlaceHolder="Find {{options.name}}" [resetFilterOnHide]="true"
+  (onPanelShow)="onPanelShow()" (onPanelHide)="onPanelHide()" (onChange)="onChange($event)" [styleClass]="styleClass"></p-multiSelect>
+

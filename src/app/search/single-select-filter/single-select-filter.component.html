@@ -1,0 +1,3 @@
+<p-dropdown #dropdown id="dim-{{options.id}}" [disabled]="options.disabled" [filter]="true"
+  [placeholder]="placeholder" [options]="options.values" optionLabel="name"
+  [resetFilterOnHide]="true" [(ngModel)]="option" (onShow)="onShow($event)" (onHide)="submit()"></p-dropdown>

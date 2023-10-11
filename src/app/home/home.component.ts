@@ -3,7 +3,7 @@ import { map, switchMap, toArray } from 'rxjs/operators';
 import { from, of } from 'rxjs';
 import { EdcaUrlSerializer, EndecapodService, SearchResult } from '@ibfd/endecapod';
 import { NavigationOption } from '../shared/navigation-option';
-import { FilterServiceConfig } from '../filter/model/filter-service-config';
+import { FilterServiceConfig } from '../search/model/filter-service-config';
 import { HttpClient } from '@angular/common/http';
 
 
@@ -32,7 +32,6 @@ export class HomeComponent implements OnInit {
     private endecapodService: EndecapodService,
     private urlSerializer: EdcaUrlSerializer
   ) {
-    debugger
     this.loadInitQuery();
     this.filterConfig =  {
       "initQuery": "N=3+10&Ne=6185+6201+6332+6593+6680&select=relative_path",
@@ -86,7 +85,6 @@ export class HomeComponent implements OnInit {
   }
 
   doSearch(id?: number, reset = false){
-    debugger
     this.dirty = true;
     this.endecaRecordsUser = [];
     if(reset){

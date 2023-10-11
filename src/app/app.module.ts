@@ -4,10 +4,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
-import { FilterModule, FilterService } from './filter/filter.module';
+import { SearchModule, FilterService } from './search/search.module';
 import { EdcaUrlSerializer, EndecapodModule, EndecapodService } from '@ibfd/endecapod';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { AppConfigService } from './filter/service/app-config.service';
+import { AppConfigService } from './search/service/app-config.service';
+import { LinktaggerModule } from './search/lib/linktagger/linktagger.module';
+import { FilterComponent } from './search/filter/filter.component';
 
 const appConfigFactory = (appConfigService: AppConfigService) => {
   return () => appConfigService.loadAppConfig();
@@ -27,14 +29,15 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FilterModule,
+    SearchModule,
     EndecapodModule,
     HttpClientModule,
+    LinktaggerModule,
     RouterModule.forRoot(routes, {useHash: true}),
   ],
   providers: [

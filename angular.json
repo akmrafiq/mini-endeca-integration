@@ -32,6 +32,12 @@
             ],
             "styles": [
               "node_modules/bootstrap/scss/bootstrap.scss",
+              "src/assets/css/bootstrap.offcanvas.min.css",
+              "src/assets/css/bootstrap.min.css",
+              "src/assets/css/theme.css",
+              "src/assets/css/ibfd-introjs-theme.css",
+              "./node_modules/primeng/resources/primeng.min.css",
+              "./node_modules/primeicons/primeicons.css",
               "src/styles.scss"
             ],
             "scripts": []

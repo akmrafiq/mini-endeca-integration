@@ -1,0 +1,14 @@
+/*
+  These styles overrides default lens-viewer's style
+*/
+.menu-bar .context-toggles a {
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+@media screen and (max-width: 768px) {
+  .article .document,
+  .article .resources {
+    width: 50% !important;
+  }
+}
