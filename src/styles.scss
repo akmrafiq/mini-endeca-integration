@@ -1,3 +1,7 @@
+.filter-header{
+  margin-left: 18px;
+}
+
 .ib-filters-wrapper .ib-collapse-panel {
   height: 1.75rem;
   width: 100%;
@@ -25,6 +29,23 @@
   padding: 0 20px;
 }
 
+.ib-filters-all {
+  margin-top: -1px;
+}
+
+.ib-see-also-doc-footer-wrapper .multi-collapse {
+  padding: .5rem .8rem;
+}
+
+.ib-search-suggestions-panel-wrapper .multi-collapse span {
+  margin: 0;
+  display: block;
+}
+
+.ib-search-suggestions-panel-wrapper .multi-collapse {
+  padding: .5rem .8rem 0;
+}
+
 .ib-offcanvas-navigation-grid-comparison .offcanvas-nav .ib-collapse-panel {
   display: block;
   margin: 0 0 .5rem 0;
@@ -47,6 +68,38 @@
 
 .ib-offcanvas-navigation-grid-comparison .ib-filters-all {
   min-height: 70vh;
+}
+
+.ib-backlink-collapse .ib-label {
+  margin-top: unset;
+}
+
+.ib-modal-fav-content .ib-label {
+  display: inline-block;
+}
+
+.ib-agGrid-filters-wrapper>div label.ib-label {
+  margin-top: .6rem;
+}
+
+.tsm-table-filter-row label.ib-label {
+  display: none !important;
+}
+
+@media screen and (min-width: 568px) {
+  .ib-results-list-action-bar .ib-label
+  {
+    margin: .55rem .5rem 0;
+    float: left;
+  }
+  .ib-results-list-action-bar .sort-icon
+  {
+    padding: .5rem .7rem .5rem 1rem;
+    float: left;
+  }
+  .ib-results-list-action-bar .sort-icon {
+    margin-top: unset;
+  }
 }
 
 .ib-filters-sticky-mobile {

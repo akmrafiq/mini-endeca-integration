@@ -1,4 +1,4 @@
 <label class="ib-label" [class.ib-disabled]="options.disabled">{{options.name}}</label>
-
+<br/>
 <app-single-select-filter *ngIf="!options.multi" [options]="options"
   (show)="getValues()" (select)="onSelectChange($event)" [resetOnSubmit]="resetOnSubmit" [resetFilter]="resetFilter"></app-single-select-filter>
